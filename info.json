@@ -1,11 +1,11 @@
 {
   "name": "snouz-big-solar-panel",
-  "version": "1.0.7",
+  "version": "1.1.1",
   "title": "Big solar panel",
   "author": "snouz",
   "homepage": "https://github.com/snouz/snouz-big-solar-panel",
   "factorio_version": "2.1",
-  "description": "This mod adds a more potent solar panel, 60x more powerful, 6.6x more space efficient. ",
+  "description": "This mod adds a more potent solar panel, now configurable, by default 36x more powerful and 4x more space efficient.",
   "dependencies": [
     "base",
     "? space-age"

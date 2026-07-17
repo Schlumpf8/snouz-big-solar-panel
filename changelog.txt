@@ -1,4 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+Date: 2026-07-16
+  Info:
+    - Fixed ingame descriptions
+---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2026-07-16
+  Balancing:
+    - Nerfed solar panel space efficiency to 4x more efficient (by default)
+    - Added a startup setting to let you change the efficiency value
+    - Adjusted recipe cost to the new setting and the new default value
+    - Changed health from 600 to 80 as a tradeoff (makes it more brittle than the normal panel's 200hp)
+---------------------------------------------------------------------------------------------------
 Version: 1.0.7
 Date: 2026-06-23
   Info:

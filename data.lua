@@ -6,6 +6,10 @@ local sounds = require ("__base__.prototypes.entity.sounds")
 local graphics = "__snouz-big-solar-panel__/graphics"
 local ENTITYPATH = graphics .. "/entity/"
 
+local percent = 400
+if settings.startup["big-solar-panel-multiplier-percent"] and settings.startup["big-solar-panel-multiplier-percent"].value then
+  percent = settings.startup["big-solar-panel-multiplier-percent"].value
+end
 
 data:extend(
 {
@@ -26,15 +30,15 @@ data:extend(
   {
     type = "recipe",
     name = "big-solar-panel",
-    energy_required = 200,
+    energy_required = math.ceil(percent/3), --200
     enabled = false,
     ingredients =
     {
-      {type = "item", name = "solar-panel", amount = 60},
-      {type = "item", name = "medium-electric-pole", amount = 25},
-      {type = "item", name = "concrete", amount = 400}
+      {type = "item", name = "solar-panel", amount = math.ceil(percent*0.09)}, -- 60 --def 36
+      {type = "item", name = "medium-electric-pole", amount = math.ceil(percent*0.04)}, -- 25 --def 16
+      {type = "item", name = "concrete", amount = math.ceil(percent*0.60)} -- 400 * 240
     },
-    results = {{type="item", name="big-solar-panel", amount=1}}
+    results = {{type = "item", name = "big-solar-panel", amount = 1}}
   },
 
   {
@@ -73,7 +77,7 @@ data:extend(
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness = 0.25, mining_time = 0.5, result = "big-solar-panel"},
     fast_replaceable_group = "big-solar-panel",
-    max_health = 600,
+    max_health = 80,
     corpse = "big-solar-panel-remnants",
     dying_explosion = "solar-panel-explosion",
     collision_box = {{-4.2, -4.2}, {4.2, 4.2}},
@@ -111,7 +115,8 @@ data:extend(
     },
     impact_category = "glass",
     --production = "60kW"
-    production = "3600kW"
+    --production = "3600kW"
+    production = math.floor(percent * 5.4) .. "kW" --def 2160
   },
 
 
@@ -148,6 +153,6 @@ data:extend(
 if mods["space-age"] then
   table.insert(data.raw["technology"]["big-solar-energy"].prerequisites, "electromagnetic-science-pack")
   table.insert(data.raw["technology"]["big-solar-energy"].unit.ingredients, {"electromagnetic-science-pack", 1})
-  table.insert(data.raw["recipe"]["big-solar-panel"].ingredients, {type = "item", name = "supercapacitor", amount = 10})
+  table.insert(data.raw["recipe"]["big-solar-panel"].ingredients, {type = "item", name = "supercapacitor", amount = math.ceil(percent*0.15)}) --10
 end
   

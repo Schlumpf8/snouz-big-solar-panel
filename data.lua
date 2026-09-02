@@ -11,6 +11,19 @@ if settings.startup["big-solar-panel-multiplier-percent"] and settings.startup["
   percent = settings.startup["big-solar-panel-multiplier-percent"].value
 end
 
+local shadow = {
+  filename = ENTITYPATH .. "big-solar-panel_shadow.png",
+  width = 704,
+  height = 704,
+  scale = 0.5,
+  frame_count = 1,
+  direction_count = 1,
+  shift = util.by_pixel(0, 0),
+  draw_as_shadow = true,
+}
+
+
+
 data:extend(
 {
   {
@@ -90,28 +103,128 @@ data:extend(
     },
     picture =
     {
-      layers =
       {
+        layers =
         {
-          filename = ENTITYPATH .. "big-solar-panel.png",
-          width = 624,
-          height = 578,
-          scale = 0.5,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(10, 0),
+          {
+            filename = ENTITYPATH .. "big-solar-panel-0.png",
+            width = 704,
+            height = 704,
+            scale = 0.5,
+            frame_count = 1,
+            direction_count = 1,
+            shift = util.by_pixel(0, 0),
+          },
+          shadow
         },
+      },
+      {
+        layers =
         {
-          filename = ENTITYPATH .. "big-solar-panel_shadow.png",
-          width = 624,
-          height = 578,
-          scale = 0.5,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(10, 0),
-          draw_as_shadow = true,
-        }
-      }
+          {
+            filename = ENTITYPATH .. "big-solar-panel-1.png",
+            width = 704,
+            height = 704,
+            scale = 0.5,
+            frame_count = 1,
+            direction_count = 1,
+            shift = util.by_pixel(0, 0),
+          },
+          shadow
+        },
+      },
+      {
+        layers =
+        {
+          {
+            filename = ENTITYPATH .. "big-solar-panel-2.png",
+            width = 704,
+            height = 704,
+            scale = 0.5,
+            frame_count = 1,
+            direction_count = 1,
+            shift = util.by_pixel(0, 0),
+          },
+          shadow
+        },
+      },
+      {
+        layers =
+        {
+          {
+            filename = ENTITYPATH .. "big-solar-panel-3.png",
+            width = 704,
+            height = 704,
+            scale = 0.5,
+            frame_count = 1,
+            direction_count = 1,
+            shift = util.by_pixel(0, 0),
+          },
+          shadow
+        },
+      },
+      {
+        layers =
+        {
+          {
+            filename = ENTITYPATH .. "big-solar-panel-4.png",
+            width = 704,
+            height = 704,
+            scale = 0.5,
+            frame_count = 1,
+            direction_count = 1,
+            shift = util.by_pixel(0, 0),
+          },
+          shadow
+        },
+      },
+      {
+        layers =
+        {
+          {
+            filename = ENTITYPATH .. "big-solar-panel-5.png",
+            width = 704,
+            height = 704,
+            scale = 0.5,
+            frame_count = 1,
+            direction_count = 1,
+            shift = util.by_pixel(0, 0),
+          },
+          shadow
+        },
+      },
+      {
+        layers =
+        {
+          {
+            filename = ENTITYPATH .. "big-solar-panel-6.png",
+            width = 704,
+            height = 704,
+            scale = 0.5,
+            frame_count = 1,
+            direction_count = 1,
+            shift = util.by_pixel(0, 0),
+          },
+          shadow
+        },
+      },
+    },
+    integration_patch_render_layer = "object",
+    integration_patch =
+    {
+      
+        layers =
+        {
+          {
+            filename = ENTITYPATH .. "big-solar-panel-integrationpatch.png",
+            width = 704,
+            height = 704,
+            scale = 0.5,
+            shift = util.by_pixel(0, 0),
+          },
+          shadow
+        },
+      
     },
     impact_category = "glass",
     --production = "60kW"

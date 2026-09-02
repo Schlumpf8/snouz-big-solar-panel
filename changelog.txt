@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.1
+Date: 2026-09-02
+  Graphics:
+    - Fixed solar panel top side being under entities, added a slight shadow on the right, and edited on variations to look less shadowed
+---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+Date: 2026-08-24
+  Graphics:
+    - Reworked graphics by mainly adding borders to make repeated panels touch each other
+    - Made some sprite variations
+---------------------------------------------------------------------------------------------------
 Version: 1.1.1
 Date: 2026-07-16
   Info:
